@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bxg-Pp-ZnF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Github Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GithubSearchViewController" customModule="GitHub_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pQk-Y1-n0K">
+                                <rect key="frame" x="3" y="91" width="315" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zg9-TA-CaC">
+                                <rect key="frame" x="321" y="91" width="90" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8dF-a6-91N"/>
+                                    <constraint firstAttribute="width" constant="90" id="gNo-C9-RUt"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="昇順"/>
+                                    <segment title="降順"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ak7-43-Zyx">
+                                <rect key="frame" x="0.0" y="128" width="414" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pQk-Y1-n0K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="3" id="6eD-dV-azF"/>
+                            <constraint firstItem="zg9-TA-CaC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="I1F-kh-RNe"/>
+                            <constraint firstItem="Ak7-43-Zyx" firstAttribute="top" secondItem="pQk-Y1-n0K" secondAttribute="bottom" constant="3" id="SdP-bX-6UV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ak7-43-Zyx" secondAttribute="trailing" id="VoT-Jb-QL3"/>
+                            <constraint firstItem="Ak7-43-Zyx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eM9-SQ-nNB"/>
+                            <constraint firstItem="pQk-Y1-n0K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="fp0-xx-Uwf"/>
+                            <constraint firstItem="zg9-TA-CaC" firstAttribute="leading" secondItem="pQk-Y1-n0K" secondAttribute="trailing" constant="3" id="mq6-80-bwY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ak7-43-Zyx" secondAttribute="bottom" id="psm-Wa-PDA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zg9-TA-CaC" secondAttribute="trailing" constant="3" id="tMh-28-eLc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ekh-hJ-WpG"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="pQk-Y1-n0K" id="w4e-En-0v3"/>
+                        <outlet property="sortTypeSegmentedControl" destination="zg9-TA-CaC" id="9Pi-k3-VQ4"/>
+                        <outlet property="tableView" destination="Ak7-43-Zyx" id="mhb-yg-Has"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="130.58035714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ibp-xb-QIM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bxg-Pp-ZnF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EFe-eb-x2h">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="heB-Eo-Rxz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XfX-aU-ZmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
