@@ -13,6 +13,7 @@ final class GithubAPI {
 
   private init() {}
 
+//successとエラーで分ける
   func get(searchWord: String, isDesc: Bool = true, success: (([GithubModel]) -> Void)? = nil, error: ((Error)->Void)? = nil) {
     guard searchWord.count > 0 else {
       success?([])
@@ -43,8 +44,10 @@ extension Reactive where Base: GithubAPI {
   func get(searchWord: String, isDesc: Bool = true) -> Observable<[GithubModel]> {
     return Observable.create { observer in
       GithubAPI.shared.get(searchWord: searchWord, success: { (models) in
+        //successの時
         observer.on(.next(models))
       }, error: { err in
+        //errorのとき
         observer.on(.error(err))
       })
       return Disposables.create()
