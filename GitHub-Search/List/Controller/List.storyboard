@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--Repositories-->
         <scene sceneID="JTC-vV-eDo">
             <objects>
                 <viewController id="kNJ-r5-zUD" customClass="ListViewController" customModule="GitHub_Search" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <constraint firstItem="h27-EL-ouO" firstAttribute="top" secondItem="i9K-7U-10c" secondAttribute="top" id="snA-hv-amS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qEb-SX-sVO">
+                    <navigationItem key="navigationItem" title="Repositories" id="qEb-SX-sVO">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="u3T-qD-4zT">
                             <connections>
                                 <action selector="searchButton:" destination="kNJ-r5-zUD" id="ryt-h1-bGY"/>
