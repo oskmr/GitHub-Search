@@ -11,7 +11,7 @@
         <!--Github Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GithubSearchViewController" customModule="GitHub_Search" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GithubSearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="GithubSearchViewController" customModule="GitHub_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,8 +28,8 @@
                                     <constraint firstAttribute="width" constant="90" id="gNo-C9-RUt"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="昇順"/>
-                                    <segment title="降順"/>
+                                    <segment title="star"/>
+                                    <segment title="new"/>
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ak7-43-Zyx">

@@ -35,6 +35,7 @@ final class GithubSearchViewController: UIViewController {
     }
     
     private func bindInputStream() {
+        //0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
         let searchTextObservable = searchTextField.rx.text
             .debounce(RxTimeInterval.milliseconds(200), scheduler: MainScheduler.instance)
             .distinctUntilChanged().filterNil().filter { $0.isNotEmpty }

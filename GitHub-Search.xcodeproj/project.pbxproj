@@ -25,7 +25,7 @@
 		E8C00CF025BC68D200FC6A2A /* GithubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00CEF25BC68D200FC6A2A /* GithubModel.swift */; };
 		E8C00CF525BC68ED00FC6A2A /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00CF425BC68ED00FC6A2A /* GithubAPI.swift */; };
 		E8C00D6A25BD55AD00FC6A2A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00D6925BD55AD00FC6A2A /* ListViewController.swift */; };
-		E8C00D7225BD55BE00FC6A2A /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C00D7125BD55BE00FC6A2A /* main.storyboard */; };
+		E8C00D7225BD55BE00FC6A2A /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C00D7125BD55BE00FC6A2A /* List.storyboard */; };
 		E8C00D7825BD55D600FC6A2A /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00D7625BD55D600FC6A2A /* ListTableViewCell.swift */; };
 		E8C00D7925BD55D600FC6A2A /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C00D7725BD55D600FC6A2A /* ListTableViewCell.xib */; };
 		E8C00D7E25BD55EA00FC6A2A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00D7D25BD55EA00FC6A2A /* ListViewModel.swift */; };
@@ -81,7 +81,7 @@
 		E8C00CEF25BC68D200FC6A2A /* GithubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubModel.swift; sourceTree = "<group>"; };
 		E8C00CF425BC68ED00FC6A2A /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		E8C00D6925BD55AD00FC6A2A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		E8C00D7125BD55BE00FC6A2A /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
+		E8C00D7125BD55BE00FC6A2A /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		E8C00D7625BD55D600FC6A2A /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		E8C00D7725BD55D600FC6A2A /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		E8C00D7D25BD55EA00FC6A2A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 			children = (
 				E8C00D6825BD3CBE00FC6A2A /* Cell */,
 				E8C00D6925BD55AD00FC6A2A /* ListViewController.swift */,
-				E8C00D7125BD55BE00FC6A2A /* main.storyboard */,
+				E8C00D7125BD55BE00FC6A2A /* List.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -419,7 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8C00D7225BD55BE00FC6A2A /* main.storyboard in Resources */,
+				E8C00D7225BD55BE00FC6A2A /* List.storyboard in Resources */,
 				E8C00D7925BD55D600FC6A2A /* ListTableViewCell.xib in Resources */,
 				E8C00CA525BC670800FC6A2A /* LaunchScreen.storyboard in Resources */,
 				E8C00CA225BC670800FC6A2A /* Assets.xcassets in Resources */,
