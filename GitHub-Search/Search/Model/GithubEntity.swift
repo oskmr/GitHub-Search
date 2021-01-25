@@ -6,10 +6,10 @@
 //
 
 struct GithubResponse: Codable {
-  let items: [GithubModel]?
+  let items: [GithubEntity]?
 }
 
-struct GithubModel: Codable {
+struct GithubEntity: Codable {
   let id: Int
   let name: String
   private let fullName: String

@@ -12,7 +12,7 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var url: UILabel!
 
-    func prepareUI(listModel: ListModel) {
+    func prepareUI(listModel: GithubListEntity) {
         title.text = listModel.name
         url.text = listModel.htmlURL
     }
