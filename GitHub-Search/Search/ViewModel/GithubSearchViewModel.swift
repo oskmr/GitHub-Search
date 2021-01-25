@@ -15,7 +15,7 @@ protocol GithubSearchViewModelInput {
 
 protocol GithubSearchViewModelOutput {
     var changeModelsObservable: Observable<Void> { get }
-    var models: [GithubModel] { get }
+    var models: [GithubEntity] { get }
 }
 
 final class GithubSearchViewModel: GithubSearchViewModelInput, GithubSearchViewModelOutput {
@@ -33,18 +33,23 @@ final class GithubSearchViewModel: GithubSearchViewModelInput, GithubSearchViewM
     })
     private let _changeModelsObservable = PublishRelay<Void>()
     lazy var changeModelsObservable = _changeModelsObservable.asObservable()
-    private(set) var models: [GithubModel] = []
+    private(set) var models: [GithubEntity] = []
 
     init() {
-        Observable.combineLatest(
-            _searchText,
-            _sortType
-        ).flatMapLatest({ (searchWord, sortType) -> Observable<[GithubModel]> in
-            GithubAPI.shared.rx.get(searchWord: searchWord, isDesc: sortType)
-        }).map {[weak self] (models) -> Void in
-            self?.models = models
-            return
-        }.bind(to: _changeModelsObservable).disposed(by: disposeBag)
+        Observable
+            .combineLatest(
+                _searchText,
+                _sortType
+            )
+            .flatMapLatest({ (searchWord, sortType) -> Observable<[GithubEntity]> in
+                GithubAPI.shared.rx.get(searchWord: searchWord, isDesc: sortType)
+            })
+            .map {[weak self] (models) -> Void in
+                self?.models = models
+                return
+            }
+            .bind(to: _changeModelsObservable)
+            .disposed(by: disposeBag)
     }
 
 }

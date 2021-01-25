@@ -8,26 +8,26 @@
 import RxSwift
 import RxCocoa
 
-protocol ListViewModelInput {
+protocol GithubListViewModelInput {
     var getListObserver: AnyObserver<Void> { get }
 }
 
-protocol ListViewModelOutput {
+protocol GithubListViewModelOutput {
     var changeModelsObservable: Observable<Void> { get }
-    var models: [ListModel] { get }
+    var models: [GithubListEntity] { get }
 }
 
-final class ListViewModel:  ListViewModelInput, ListViewModelOutput {
+final class GithubListViewModel:  GithubListViewModelInput, GithubListViewModelOutput {
 
     private let disposeBag = DisposeBag()
     private let _getListObserver = PublishSubject<Void>()
     private(set) lazy var getListObserver: AnyObserver<Void> = _getListObserver.asObserver()
     private let _changeModelsObservable = PublishRelay<Void>()
     lazy var changeModelsObservable = _changeModelsObservable.asObservable()
-    private(set) var models: [ListModel] = []
+    private(set) var models: [GithubListEntity] = []
 
     init() {
-        ListAPI.shared.rx.get(completion: {models in
+        GithubListAPI.shared.rx.get(completion: {models in
             print(models)
         }).map {[weak self] (models) -> Void in
             self?.models = models

@@ -8,12 +8,12 @@
 import UIKit
 import RxSwift
 
-class ListViewController: UIViewController {
+class GithubListViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
-    private let viewModel = ListViewModel()
-    private lazy var input: ListViewModelInput = viewModel
-    private lazy var output: ListViewModelOutput = viewModel
+    private let viewModel = GithubListViewModel()
+    private lazy var input: GithubListViewModelInput = viewModel
+    private lazy var output: GithubListViewModelOutput = viewModel
 
     @IBAction func searchButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Search", bundle: nil)
@@ -49,7 +49,7 @@ class ListViewController: UIViewController {
 
 }
 
-extension ListViewController: UITableViewDataSource {
+extension GithubListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return output.models.count
     }

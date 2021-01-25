@@ -8,10 +8,10 @@
 import Foundation
 
 struct ListResponse: Codable {
-  let items: [ListModel]?
+  let items: [GithubListEntity]?
 }
 
-struct ListModel: Codable {
+struct GithubListEntity: Codable {
     let id: Int
     let name: String
     let fullName: String

@@ -11,7 +11,7 @@ class GithubTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var urlLabel: UILabel!
 
-    func prepareUI(githubModel: GithubModel) {
+    func prepareUI(githubModel: GithubEntity) {
         titleLabel.text = githubModel.name
         urlLabel.text = githubModel.urlStr
     }
