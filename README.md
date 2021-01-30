@@ -3,8 +3,11 @@
 
 ## 使った技術
 RxSwift
+
 RxCocoa
+
 RxOptional
+
 Alamofire
 ## アーキテクチャ
 MVVM
