@@ -1,4 +1,4 @@
-# 概要
+# GitHub-Search
 
 [![Language](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://swift.org)
 
