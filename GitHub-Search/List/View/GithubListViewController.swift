@@ -46,7 +46,6 @@ class GithubListViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
-
 }
 
 extension GithubListViewController: UITableViewDataSource {
@@ -63,5 +62,4 @@ extension GithubListViewController: UITableViewDataSource {
 
         return cell
     }
-
 }

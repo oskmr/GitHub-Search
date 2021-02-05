@@ -29,22 +29,21 @@ final class GithubSearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         bindInputStream()
         bindOutputStream()
     }
     
     private func bindInputStream() {
-        //0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
+        // 0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
         let searchTextObservable = searchTextField.rx.text
             .debounce(RxTimeInterval.milliseconds(200), scheduler: MainScheduler.instance)
             .distinctUntilChanged().filterNil().filter { $0.isNotEmpty }
+        // ここのfilterNil消す書き方にできる？
 
         let sortTypeObservable = Observable.merge(
             Observable.just(sortTypeSegmentedControl.selectedSegmentIndex),
             sortTypeSegmentedControl.rx.controlEvent(.valueChanged).map { self.sortTypeSegmentedControl.selectedSegmentIndex }
         ).map { $0 == 0 }
-
         searchTextObservable.bind(to: input.searchTextObserver).disposed(by: disposeBag)
         sortTypeObservable.bind(to: input.sortTypeObserver).disposed(by: disposeBag)
     }

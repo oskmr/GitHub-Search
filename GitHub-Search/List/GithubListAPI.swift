@@ -32,7 +32,6 @@ final class GithubListAPI {
             }
         }
     }
-
 }
 
 extension GithubListAPI: ReactiveCompatible {}

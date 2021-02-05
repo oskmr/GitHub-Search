@@ -34,5 +34,4 @@ final class GithubListViewModel:  GithubListViewModelInput, GithubListViewModelO
             return
         }.bind(to: _changeModelsObservable).disposed(by: disposeBag)
     }
-
 }
