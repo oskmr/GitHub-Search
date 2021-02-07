@@ -1,4 +1,4 @@
-# Xcode (from gitignore.io)
+# Xcode
 build/
 *.pbxuser
 !default.pbxuser
