@@ -9,12 +9,11 @@ import Alamofire
 import RxSwift
 
 final class GithubAPI {
-  static let shared = GithubAPI()
-
-  private init() {}
+//  static let shared = GithubAPI()
+//  private init() {}
 
 //successとエラーで分ける
-  func get(searchWord: String, isDesc: Bool = true, success: (([GithubEntity]) -> Void)? = nil, error: ((Error)->Void)? = nil) {
+  static func get(searchWord: String, isDesc: Bool = true, success: (([GithubEntity]) -> Void)? = nil, error: ((Error)->Void)? = nil) {
     guard searchWord.count > 0 else {
       success?([])
       return
@@ -37,13 +36,14 @@ final class GithubAPI {
       }
     }
   }
+    
 }
 
 extension GithubAPI: ReactiveCompatible {}
 extension Reactive where Base: GithubAPI {
-  func get(searchWord: String, isDesc: Bool = true) -> Observable<[GithubEntity]> {
+  static func get(searchWord: String, isDesc: Bool = true) -> Observable<[GithubEntity]> {
     return Observable.create { observer in
-      GithubAPI.shared.get(searchWord: searchWord, success: { (models) in
+      GithubAPI.get(searchWord: searchWord, success: { (models) in
         //successの時
         observer.on(.next(models))
       }, error: { err in
@@ -53,4 +53,5 @@ extension Reactive where Base: GithubAPI {
       return Disposables.create()
     }.share(replay: 1, scope: .whileConnected)
   }
+
 }

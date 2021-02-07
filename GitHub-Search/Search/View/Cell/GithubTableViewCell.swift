@@ -15,4 +15,5 @@ class GithubTableViewCell: UITableViewCell {
         titleLabel.text = githubModel.name
         urlLabel.text = githubModel.urlStr
     }
+
 }

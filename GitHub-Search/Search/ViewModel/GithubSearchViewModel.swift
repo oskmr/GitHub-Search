@@ -42,7 +42,7 @@ final class GithubSearchViewModel: GithubSearchViewModelInput, GithubSearchViewM
                 _sortType
             )
             .flatMapLatest({ (searchWord, sortType) -> Observable<[GithubEntity]> in
-                GithubAPI.shared.rx.get(searchWord: searchWord, isDesc: sortType)
+                GithubAPI.rx.get(searchWord: searchWord, isDesc: sortType)
             })
             .map {[weak self] (models) -> Void in
                 self?.models = models
