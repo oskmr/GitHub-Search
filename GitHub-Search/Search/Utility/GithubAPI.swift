@@ -53,4 +53,5 @@ extension Reactive where Base: GithubAPI {
       return Disposables.create()
     }.share(replay: 1, scope: .whileConnected)
   }
+
 }
