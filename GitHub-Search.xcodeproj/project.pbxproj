@@ -130,6 +130,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C519B56425D0E60B00C7D7B0 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		E8C00C8C25BC670600FC6A2A = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +162,7 @@
 		E8C00C9725BC670600FC6A2A /* GitHub-Search */ = {
 			isa = PBXGroup;
 			children = (
+				C519B56425D0E60B00C7D7B0 /* WebView */,
 				E8C00CCC25BC67EE00FC6A2A /* App */,
 				E8C00CD025BC680800FC6A2A /* extension */,
 				E8C00D6325BD3C3400FC6A2A /* Search */,
