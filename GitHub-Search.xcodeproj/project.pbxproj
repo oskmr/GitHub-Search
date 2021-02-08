@@ -143,6 +143,14 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		C519B58925D10D2A00C7D7B0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E8C00D8725BD560F00FC6A2A /* GithubListAPI.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		E8C00C8C25BC670600FC6A2A = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +180,6 @@
 				E8C00CD025BC680800FC6A2A /* extension */,
 				E8C00D6325BD3C3400FC6A2A /* Search */,
 				E8C00D6425BD3C6D00FC6A2A /* List */,
-				C519B56425D0E60B00C7D7B0 /* WebView */,
 				E8C00CA125BC670800FC6A2A /* Assets.xcassets */,
 				E8C00CA325BC670800FC6A2A /* LaunchScreen.storyboard */,
 				E8C00CA625BC670800FC6A2A /* Info.plist */,
@@ -275,7 +282,8 @@
 				E8C00D6525BD3C8300FC6A2A /* View */,
 				E8C00D6625BD3C9200FC6A2A /* ViewModel */,
 				E8C00D6725BD3CA200FC6A2A /* Model */,
-				E8C00D8725BD560F00FC6A2A /* GithubListAPI.swift */,
+				C519B58925D10D2A00C7D7B0 /* Utility */,
+				C519B56425D0E60B00C7D7B0 /* WebView */,
 			);
 			path = List;
 			sourceTree = "<group>";
