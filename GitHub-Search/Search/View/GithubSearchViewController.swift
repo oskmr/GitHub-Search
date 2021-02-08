@@ -43,18 +43,23 @@ final class GithubSearchViewController: UIViewController {
 
         let sortTypeObservable = Observable.merge(
             Observable.just(sortTypeSegmentedControl.selectedSegmentIndex),
-            sortTypeSegmentedControl.rx.controlEvent(.valueChanged).map { self.sortTypeSegmentedControl.selectedSegmentIndex }
+            sortTypeSegmentedControl.rx.controlEvent(.valueChanged)
+                .map { self.sortTypeSegmentedControl.selectedSegmentIndex }
         ).map { $0 == 0 }
         searchTextObservable.bind(to: input.searchTextObserver).disposed(by: disposeBag)
         sortTypeObservable.bind(to: input.sortTypeObserver).disposed(by: disposeBag)
     }
 
     private func bindOutputStream() {
-        output.changeModelsObservable.subscribe(on: MainScheduler.instance).subscribe(onNext: {
+        output
+            .changeModelsObservable
+            .subscribe(on: MainScheduler.instance)
+            .subscribe(onNext: {
             self.tableView.reloadData()
         }, onError: { error in
             print(error.localizedDescription)
-        }).disposed(by: disposeBag)
+        })
+        .disposed(by: disposeBag)
     }
 
 }
