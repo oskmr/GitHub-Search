@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DR-dx-1I3">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -34,13 +34,7 @@
                             <constraint firstItem="xIY-tQ-EUV" firstAttribute="bottom" secondItem="4DR-dx-1I3" secondAttribute="bottom" id="evl-C6-4s9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VH0-kd-T9V">
-                        <barButtonItem key="leftBarButtonItem" title="キャンセル" id="MWH-K9-mEY">
-                            <connections>
-                                <action selector="cancelButton:" destination="Uzs-Ma-76x" id="LdB-QO-ufE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="VH0-kd-T9V"/>
                     <connections>
                         <outlet property="webView" destination="4DR-dx-1I3" id="vbM-pi-d9P"/>
                     </connections>
@@ -48,24 +42,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbU-Ep-uFL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968.11594202898561" y="89.732142857142847"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pas-Qt-MM3">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o8r-yx-g83" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Fu-sg-3QF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Uzs-Ma-76x" kind="relationship" relationship="rootViewController" id="TS0-3U-dfv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EG8-bh-GPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="57.971014492753625" y="89.732142857142847"/>
         </scene>
     </scenes>
     <resources>
