@@ -10,7 +10,7 @@
 		3D446D1B23E79A4792B51E47 /* Pods_GitHub_Search_GitHub_SearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64194E6DB46C0D7CD55F595 /* Pods_GitHub_Search_GitHub_SearchUITests.framework */; };
 		40BC53BE2121995CA3B09F88 /* Pods_GitHub_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23991F1D6E93232742AB7996 /* Pods_GitHub_Search.framework */; };
 		BD4D53248C4A5872E8A1F9FB /* Pods_GitHub_SearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B4AA1BBB0A3014B06C690C /* Pods_GitHub_SearchTests.framework */; };
-		C519B56625D0ED9E00C7D7B0 /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C519B56525D0ED9E00C7D7B0 /* WebView.storyboard */; };
+		C519B56625D0ED9E00C7D7B0 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C519B56525D0ED9E00C7D7B0 /* WebViewController.storyboard */; };
 		C519B56B25D0F16200C7D7B0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C519B56A25D0F16200C7D7B0 /* WebViewController.swift */; };
 		E8C00C9925BC670600FC6A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00C9825BC670600FC6A2A /* AppDelegate.swift */; };
 		E8C00C9B25BC670600FC6A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00C9A25BC670600FC6A2A /* SceneDelegate.swift */; };
@@ -62,7 +62,7 @@
 		76B4AA1BBB0A3014B06C690C /* Pods_GitHub_SearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_SearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77687E86C1A70B3124611C52 /* Pods-GitHub-Search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Search.debug.xcconfig"; path = "Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search.debug.xcconfig"; sourceTree = "<group>"; };
 		B64194E6DB46C0D7CD55F595 /* Pods_GitHub_Search_GitHub_SearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_Search_GitHub_SearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C519B56525D0ED9E00C7D7B0 /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		C519B56525D0ED9E00C7D7B0 /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
 		C519B56A25D0F16200C7D7B0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E8C00C9525BC670600FC6A2A /* GitHub-Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C00C9825BC670600FC6A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		C519B56425D0E60B00C7D7B0 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				C519B56525D0ED9E00C7D7B0 /* WebView.storyboard */,
+				C519B56525D0ED9E00C7D7B0 /* WebViewController.storyboard */,
 				C519B56A25D0F16200C7D7B0 /* WebViewController.swift */,
 			);
 			path = WebView;
@@ -434,7 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8C00D7225BD55BE00FC6A2A /* List.storyboard in Resources */,
-				C519B56625D0ED9E00C7D7B0 /* WebView.storyboard in Resources */,
+				C519B56625D0ED9E00C7D7B0 /* WebViewController.storyboard in Resources */,
 				E8C00D7925BD55D600FC6A2A /* ListTableViewCell.xib in Resources */,
 				E8C00CA525BC670800FC6A2A /* LaunchScreen.storyboard in Resources */,
 				E8C00CA225BC670800FC6A2A /* Assets.xcassets in Resources */,

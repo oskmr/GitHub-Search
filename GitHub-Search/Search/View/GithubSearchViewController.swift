@@ -19,6 +19,7 @@ final class GithubSearchViewController: UIViewController {
             let cell = UINib(nibName: "GithubTableViewCell", bundle: nil)
             tableView.register(cell, forCellReuseIdentifier: "Cell")
             tableView.dataSource = self
+            tableView.delegate = self
         }
     }
 
@@ -58,7 +59,7 @@ final class GithubSearchViewController: UIViewController {
 
 }
 
-extension GithubSearchViewController: UITableViewDataSource {
+extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return output.models.count
     }
@@ -72,4 +73,11 @@ extension GithubSearchViewController: UITableViewDataSource {
 
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
+        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController")
+        navigationController?.pushViewController(searchVC, animated: true)
+    }
+
 }
