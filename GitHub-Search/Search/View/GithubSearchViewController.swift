@@ -12,6 +12,7 @@ import RxOptional
 
 final class GithubSearchViewController: UIViewController {
 
+    private var bookMarkBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var sortTypeSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var tableView: UITableView! {
@@ -32,6 +33,14 @@ final class GithubSearchViewController: UIViewController {
         super.viewDidLoad()
         bindInputStream()
         bindOutputStream()
+        bookMarkBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(bookMarkButtonTapped(_:)))
+        self.navigationItem.rightBarButtonItems = [bookMarkBarButtonItem]
+    }
+
+    @objc func bookMarkButtonTapped(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "BookMark", bundle: nil)
+        let searchVC = storyboard.instantiateViewController(withIdentifier: "BookMarkViewController")
+        navigationController?.pushViewController(searchVC, animated: true)
     }
     
     private func bindInputStream() {
@@ -79,10 +88,22 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
         return cell
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
-//        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController")
-//        navigationController?.pushViewController(searchVC, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
+        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController
+        searchVC?.hoge(gitHubEntity: output.models[safe: indexPath.item]!)
+        navigationController!.pushViewController(searchVC!, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let bookMarkAction = UIContextualAction(style: .normal, title: "ブックマーク") { (action, view, completionHandler) in
+            // 処理を記述
+            print("ブックマークがタップされた")
+            // 実行結果に関わらず記述
+            completionHandler(true)
+            // realmでtitle, url保存
+        }
+        return UISwipeActionsConfiguration(actions: [bookMarkAction])
+    }
 
 }
