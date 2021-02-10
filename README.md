@@ -6,7 +6,8 @@ GitHubAPIを使用したアプリ
 - リポジトリ一覧
 - インクリメンタルサーチ
 - 検索結果のスター順、作成日順での並び替え
-- [WIP]WebViewでReadmeに遷移
+- [WIP]WebViewで各リポジトリに遷移
+- [WIP]Cellを右スワイプしてブックマーク
 - [WIP]ViewModelのテスト
 を実装
 
