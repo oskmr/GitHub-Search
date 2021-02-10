@@ -32,6 +32,7 @@ class GithubListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindOutputStream()
+        self.navigationItem.title = "Repositories"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -64,10 +65,10 @@ extension GithubListViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
-        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController")
-        navigationController?.pushViewController(searchVC, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
+//        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController")
+//        navigationController?.pushViewController(searchVC, animated: true)
+//    }
     
 }
