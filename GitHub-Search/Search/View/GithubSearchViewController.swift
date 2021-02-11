@@ -90,7 +90,7 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
-        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController
+        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? GitHubWebViewController
         searchVC?.hoge(gitHubEntity: output.models[safe: indexPath.item]!)
         navigationController!.pushViewController(searchVC!, animated: true)
     }

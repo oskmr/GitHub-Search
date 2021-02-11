@@ -8,17 +8,21 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, WKNavigationDelegate {
-
-    private var url: String = "https://github.com/miserii"
+class GitHubWebViewController: UIViewController, WKNavigationDelegate {
+    private var gitHubEntity: GithubEntity?
     @IBOutlet weak var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let url = URL(string: url) {
+        if let url = URL(string: hoge.urlStr) {
             self.webView.load(URLRequest(url: url))
         }
+
     }
-    
+
+    func hoge(gitHubEntity: GithubEntity) {
+        gitHubEntity = gitHubEntity
+    }
+
 }
