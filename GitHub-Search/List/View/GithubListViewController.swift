@@ -25,12 +25,14 @@ class GithubListViewController: UIViewController {
             let cell = UINib(nibName: "ListTableViewCell", bundle: nil)
             tableView.register(cell, forCellReuseIdentifier: "Cell")
             tableView.dataSource = self
+            tableView.delegate = self
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         bindOutputStream()
+        self.navigationItem.title = "Repositories"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +50,7 @@ class GithubListViewController: UIViewController {
     }
 }
 
-extension GithubListViewController: UITableViewDataSource {
+extension GithubListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return output.models.count
     }
@@ -62,4 +64,11 @@ extension GithubListViewController: UITableViewDataSource {
 
         return cell
     }
+
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
+//        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController")
+//        navigationController?.pushViewController(searchVC, animated: true)
+//    }
+    
 }

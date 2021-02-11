@@ -27,12 +27,15 @@ final class GithubListViewModel:  GithubListViewModelInput, GithubListViewModelO
     private(set) var models: [GithubListEntity] = []
 
     init() {
-        GithubListAPI.rx.get(completion: {models in
+        GithubListAPI.rx.get(completion: { models in
             print(models)
-        }).map {[weak self] (models) -> Void in
+        })
+        .map { [weak self] (models) -> Void in
             self?.models = models
             return
-        }.bind(to: _changeModelsObservable).disposed(by: disposeBag)
+        }
+        .bind(to: _changeModelsObservable)
+        .disposed(by: disposeBag)
     }
     
 }
