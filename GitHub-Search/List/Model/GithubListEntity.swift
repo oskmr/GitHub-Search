@@ -24,4 +24,3 @@ struct GithubListEntity: Codable {
         case htmlURL = "html_url"
     }
 }
-

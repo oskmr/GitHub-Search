@@ -32,7 +32,6 @@ final class GithubSearchViewController: UIViewController {
         bindInputStream()
         bindOutputStream()
     }
-    
     private func bindInputStream() {
         // 0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
         let searchTextObservable = searchTextField.rx.text

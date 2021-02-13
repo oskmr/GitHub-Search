@@ -13,13 +13,13 @@ final class GithubAPI {
 
   private init() {}
 
-//successとエラーで分ける
-  func get(searchWord: String, isDesc: Bool = true, success: (([GithubEntity]) -> Void)? = nil, error: ((Error)->Void)? = nil) {
+// successとエラーで分ける
+  func get(searchWord: String, isDesc: Bool = true, success: (([GithubEntity]) -> Void)? = nil, error: ((Error) -> Void)? = nil) {
     guard searchWord.count > 0 else {
       success?([])
       return
     }
-    AF.request("https://api.github.com/search/repositories?q=\(searchWord)&sort=stars&order=\(isDesc ? "desc" : "asc")").response { (response) in
+    AF.request("https://api.github.com/search/repositories?q=\(searchWord)&sort=stars&order=\(isDesc ? "desc" : "asc")").response { response in
       switch response.result {
       case .success:
         guard
@@ -40,14 +40,15 @@ final class GithubAPI {
 }
 
 extension GithubAPI: ReactiveCompatible {}
+
 extension Reactive where Base: GithubAPI {
   func get(searchWord: String, isDesc: Bool = true) -> Observable<[GithubEntity]> {
     return Observable.create { observer in
-      GithubAPI.shared.get(searchWord: searchWord, success: { (models) in
-        //successの時
+      GithubAPI.shared.get(searchWord: searchWord, success: { models in
+        // successの時
         observer.on(.next(models))
       }, error: { err in
-        //errorのとき
+        // errorのとき
         observer.on(.error(err))
       })
       return Disposables.create()
