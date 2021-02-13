@@ -20,4 +20,5 @@ struct GithubEntity: Codable {
     case name
     case fullName = "full_name"
   }
+
 }

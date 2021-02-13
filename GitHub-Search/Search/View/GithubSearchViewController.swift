@@ -12,6 +12,7 @@ import RxOptional
 
 final class GithubSearchViewController: UIViewController {
 
+    private var bookMarkBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var sortTypeSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var tableView: UITableView! {
@@ -19,6 +20,7 @@ final class GithubSearchViewController: UIViewController {
             let cell = UINib(nibName: "GithubTableViewCell", bundle: nil)
             tableView.register(cell, forCellReuseIdentifier: "Cell")
             tableView.dataSource = self
+            tableView.delegate = self
         }
     }
 
@@ -31,6 +33,14 @@ final class GithubSearchViewController: UIViewController {
         super.viewDidLoad()
         bindInputStream()
         bindOutputStream()
+        bookMarkBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(bookMarkButtonTapped(_:)))
+        self.navigationItem.rightBarButtonItems = [bookMarkBarButtonItem]
+    }
+
+    @objc func bookMarkButtonTapped(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "BookMark", bundle: nil)
+        let searchVC = storyboard.instantiateViewController(withIdentifier: "BookMarkViewController")
+        navigationController?.pushViewController(searchVC, animated: true)
     }
     private func bindInputStream() {
         // 0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
@@ -41,23 +51,28 @@ final class GithubSearchViewController: UIViewController {
 
         let sortTypeObservable = Observable.merge(
             Observable.just(sortTypeSegmentedControl.selectedSegmentIndex),
-            sortTypeSegmentedControl.rx.controlEvent(.valueChanged).map { self.sortTypeSegmentedControl.selectedSegmentIndex }
+            sortTypeSegmentedControl.rx.controlEvent(.valueChanged)
+                .map { self.sortTypeSegmentedControl.selectedSegmentIndex }
         ).map { $0 == 0 }
         searchTextObservable.bind(to: input.searchTextObserver).disposed(by: disposeBag)
         sortTypeObservable.bind(to: input.sortTypeObserver).disposed(by: disposeBag)
     }
 
     private func bindOutputStream() {
-        output.changeModelsObservable.subscribe(on: MainScheduler.instance).subscribe(onNext: {
+        output
+            .changeModelsObservable
+            .subscribe(on: MainScheduler.instance)
+            .subscribe(onNext: {
             self.tableView.reloadData()
         }, onError: { error in
             print(error.localizedDescription)
-        }).disposed(by: disposeBag)
+        })
+        .disposed(by: disposeBag)
     }
 
 }
 
-extension GithubSearchViewController: UITableViewDataSource {
+extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return output.models.count
     }
@@ -71,4 +86,23 @@ extension GithubSearchViewController: UITableViewDataSource {
 
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
+        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? GitHubWebViewController
+        searchVC?.hoge(gitHubEntity: output.models[safe: indexPath.item]!)
+        navigationController!.pushViewController(searchVC!, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let bookMarkAction = UIContextualAction(style: .normal, title: "ブックマーク") { action, view, completionHandler in
+            // 処理を記述
+            print("ブックマークがタップされた")
+            // 実行結果に関わらず記述
+            completionHandler(true)
+            // realmでtitle, url保存
+        }
+        return UISwipeActionsConfiguration(actions: [bookMarkAction])
+    }
+
 }
