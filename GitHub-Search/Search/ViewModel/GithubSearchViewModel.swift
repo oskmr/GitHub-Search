@@ -22,12 +22,12 @@ final class GithubSearchViewModel: GithubSearchViewModelInput, GithubSearchViewM
 
     let disposeBag = DisposeBag()
     private let _searchText = PublishRelay<String>()
-    lazy var searchTextObserver: AnyObserver<String> = .init(eventHandler: { (event) in
+    lazy var searchTextObserver: AnyObserver<String> = .init(eventHandler: { event in
         guard let e = event.element else { return }
         self._searchText.accept(e)
     })
     private let _sortType = PublishRelay<Bool>()
-    lazy var sortTypeObserver: AnyObserver<Bool> = .init(eventHandler: { (event) in
+    lazy var sortTypeObserver: AnyObserver<Bool> = .init(eventHandler: { event in
         guard let e = event.element else { return }
         self._sortType.accept(e)
     })
@@ -41,10 +41,10 @@ final class GithubSearchViewModel: GithubSearchViewModelInput, GithubSearchViewM
                 _searchText,
                 _sortType
             )
-            .flatMapLatest({ (searchWord, sortType) -> Observable<[GithubEntity]> in
+            .flatMapLatest({ searchWord, sortType -> Observable<[GithubEntity]> in
                 GithubAPI.rx.get(searchWord: searchWord, isDesc: sortType)
             })
-            .map {[weak self] (models) -> Void in
+            .map {[weak self] models -> Void in
                 self?.models = models
                 return
             }

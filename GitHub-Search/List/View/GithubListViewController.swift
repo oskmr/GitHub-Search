@@ -70,5 +70,4 @@ extension GithubListViewController: UITableViewDataSource, UITableViewDelegate {
 //        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController")
 //        navigationController?.pushViewController(searchVC, animated: true)
 //    }
-    
 }

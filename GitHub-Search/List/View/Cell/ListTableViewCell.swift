@@ -16,5 +16,4 @@ class ListTableViewCell: UITableViewCell {
         title.text = listModel.name
         url.text = listModel.htmlURL
     }
-    
 }
