@@ -18,6 +18,7 @@ GitHubAPIを使用したアプリ
 - RxCocoa
 - RxOptional
 - Alamofire
+- SwiftLint
 
 # アーキテクチャ
 MVVM
