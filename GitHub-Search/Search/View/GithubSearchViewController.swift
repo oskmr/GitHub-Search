@@ -42,7 +42,6 @@ final class GithubSearchViewController: UIViewController {
         let searchVC = storyboard.instantiateViewController(withIdentifier: "BookMarkViewController")
         navigationController?.pushViewController(searchVC, animated: true)
     }
-    
     private func bindInputStream() {
         // 0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
         let searchTextObservable = searchTextField.rx.text
@@ -97,7 +96,6 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let bookMarkAction = UIContextualAction(style: .normal, title: "ブックマーク") { (action, view, completionHandler) in
-            
             completionHandler(true)
         }
         return UISwipeActionsConfiguration(actions: [bookMarkAction])

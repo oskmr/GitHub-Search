@@ -9,8 +9,8 @@ import Alamofire
 import RxSwift
 
 final class GithubListAPI {
-static func get(success: (([GithubListEntity]) -> Void)? = nil, error: ((Error)->Void)? = nil) {
-        AF.request("https://api.github.com/search/repositories?q=swift&sort=stars&page=1&per_page=50").response { (response) in
+static func get(success: (([GithubListEntity]) -> Void)? = nil, error: ((Error) -> Void)? = nil) {
+        AF.request("https://api.github.com/search/repositories?q=swift&sort=stars&page=1&per_page=50").response { response in
             switch response.result {
             case .success:
                 guard
@@ -35,7 +35,7 @@ extension GithubListAPI: ReactiveCompatible {}
 extension Reactive where Base: GithubListAPI {
     static func get(completion: ([GithubListEntity]) -> Void) -> Observable<[GithubListEntity]> {
         return Observable.create { observer in
-            GithubListAPI.get(success: { (models) in
+            GithubListAPI.get(success: { models in
                 observer.on(.next(models))
             })
             return Disposables.create()
@@ -43,4 +43,3 @@ extension Reactive where Base: GithubListAPI {
     }
 
 }
-

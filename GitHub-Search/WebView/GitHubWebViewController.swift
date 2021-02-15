@@ -1,5 +1,5 @@
-//
-//  WebViewController.swift
+// 
+//  GitHubWebViewController.swift
 //  GitHub-Search
 //
 //  Created by OsakaMiseri on 2021/02/08.

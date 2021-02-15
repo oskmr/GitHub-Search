@@ -64,5 +64,5 @@ extension GithubListViewController: UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
-    
+
 }

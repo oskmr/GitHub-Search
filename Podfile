@@ -11,6 +11,7 @@ target 'GitHub-Search' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxOptional'
+  pod 'SwiftLint'
 
   target 'GitHub-SearchTests' do
     inherit! :search_paths

@@ -11,7 +11,7 @@
 		40BC53BE2121995CA3B09F88 /* Pods_GitHub_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23991F1D6E93232742AB7996 /* Pods_GitHub_Search.framework */; };
 		BD4D53248C4A5872E8A1F9FB /* Pods_GitHub_SearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B4AA1BBB0A3014B06C690C /* Pods_GitHub_SearchTests.framework */; };
 		C519B56625D0ED9E00C7D7B0 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C519B56525D0ED9E00C7D7B0 /* WebViewController.storyboard */; };
-		C519B56B25D0F16200C7D7B0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C519B56A25D0F16200C7D7B0 /* WebViewController.swift */; };
+		C519B56B25D0F16200C7D7B0 /* GitHubWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C519B56A25D0F16200C7D7B0 /* GitHubWebViewController.swift */; };
 		C519B5AE25D2F78000C7D7B0 /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C519B5AD25D2F78000C7D7B0 /* BookMarkViewController.swift */; };
 		C519B5B325D2F78E00C7D7B0 /* BookMark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C519B5B225D2F78E00C7D7B0 /* BookMark.storyboard */; };
 		C519B5BA25D2F98D00C7D7B0 /* BookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C519B5B825D2F98D00C7D7B0 /* BookMarkTableViewCell.swift */; };
@@ -21,8 +21,6 @@
 		E8C00CA025BC670600FC6A2A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C00C9E25BC670600FC6A2A /* Search.storyboard */; };
 		E8C00CA225BC670800FC6A2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C00CA125BC670800FC6A2A /* Assets.xcassets */; };
 		E8C00CA525BC670800FC6A2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C00CA325BC670800FC6A2A /* LaunchScreen.storyboard */; };
-		E8C00CB025BC670800FC6A2A /* GitHub_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00CAF25BC670800FC6A2A /* GitHub_SearchTests.swift */; };
-		E8C00CBB25BC670800FC6A2A /* GitHub_SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00CBA25BC670800FC6A2A /* GitHub_SearchUITests.swift */; };
 		E8C00CD725BC687D00FC6A2A /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00CD625BC687D00FC6A2A /* Array+.swift */; };
 		E8C00CE025BC689B00FC6A2A /* GithubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00CDE25BC689B00FC6A2A /* GithubTableViewCell.swift */; };
 		E8C00CE125BC689B00FC6A2A /* GithubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C00CDF25BC689B00FC6A2A /* GithubTableViewCell.xib */; };
@@ -67,7 +65,7 @@
 		77687E86C1A70B3124611C52 /* Pods-GitHub-Search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Search.debug.xcconfig"; path = "Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search.debug.xcconfig"; sourceTree = "<group>"; };
 		B64194E6DB46C0D7CD55F595 /* Pods_GitHub_Search_GitHub_SearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_Search_GitHub_SearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C519B56525D0ED9E00C7D7B0 /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
-		C519B56A25D0F16200C7D7B0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C519B56A25D0F16200C7D7B0 /* GitHubWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubWebViewController.swift; sourceTree = "<group>"; };
 		C519B5AD25D2F78000C7D7B0 /* BookMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
 		C519B5B225D2F78E00C7D7B0 /* BookMark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookMark.storyboard; sourceTree = "<group>"; };
 		C519B5B825D2F98D00C7D7B0 /* BookMarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewCell.swift; sourceTree = "<group>"; };
@@ -80,10 +78,8 @@
 		E8C00CA425BC670800FC6A2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8C00CA625BC670800FC6A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8C00CAB25BC670800FC6A2A /* GitHub-SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GitHub-SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8C00CAF25BC670800FC6A2A /* GitHub_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub_SearchTests.swift; sourceTree = "<group>"; };
 		E8C00CB125BC670800FC6A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8C00CB625BC670800FC6A2A /* GitHub-SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GitHub-SearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8C00CBA25BC670800FC6A2A /* GitHub_SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub_SearchUITests.swift; sourceTree = "<group>"; };
 		E8C00CBC25BC670800FC6A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8C00CD625BC687D00FC6A2A /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		E8C00CDE25BC689B00FC6A2A /* GithubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTableViewCell.swift; sourceTree = "<group>"; };
@@ -146,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				C519B56525D0ED9E00C7D7B0 /* WebViewController.storyboard */,
-				C519B56A25D0F16200C7D7B0 /* WebViewController.swift */,
+				C519B56A25D0F16200C7D7B0 /* GitHubWebViewController.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -219,7 +215,6 @@
 		E8C00CAE25BC670800FC6A2A /* GitHub-SearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				E8C00CAF25BC670800FC6A2A /* GitHub_SearchTests.swift */,
 				E8C00CB125BC670800FC6A2A /* Info.plist */,
 			);
 			path = "GitHub-SearchTests";
@@ -228,7 +223,6 @@
 		E8C00CB925BC670800FC6A2A /* GitHub-SearchUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E8C00CBA25BC670800FC6A2A /* GitHub_SearchUITests.swift */,
 				E8C00CBC25BC670800FC6A2A /* Info.plist */,
 			);
 			path = "GitHub-SearchUITests";
@@ -373,6 +367,7 @@
 				E8C00C9225BC670600FC6A2A /* Frameworks */,
 				E8C00C9325BC670600FC6A2A /* Resources */,
 				C421670B84B1A650D9EDCC20 /* [CP] Embed Pods Frameworks */,
+				C519B65125D7E5E300C7D7B0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -554,6 +549,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C519B65125D7E5E300C7D7B0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n  \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		C5AC9289F6F7B5DE1E392218 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,7 +628,7 @@
 				E8C00CEB25BC68C000FC6A2A /* GithubSearchViewModel.swift in Sources */,
 				E8C00CF525BC68ED00FC6A2A /* GithubAPI.swift in Sources */,
 				E8C00D7825BD55D600FC6A2A /* ListTableViewCell.swift in Sources */,
-				C519B56B25D0F16200C7D7B0 /* WebViewController.swift in Sources */,
+				C519B56B25D0F16200C7D7B0 /* GitHubWebViewController.swift in Sources */,
 				E8C00D8825BD560F00FC6A2A /* GithubListAPI.swift in Sources */,
 				C519B5AE25D2F78000C7D7B0 /* BookMarkViewController.swift in Sources */,
 				E8C00D7E25BD55EA00FC6A2A /* GithubListViewModel.swift in Sources */,
@@ -628,7 +640,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8C00CB025BC670800FC6A2A /* GitHub_SearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +647,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8C00CBB25BC670800FC6A2A /* GitHub_SearchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
