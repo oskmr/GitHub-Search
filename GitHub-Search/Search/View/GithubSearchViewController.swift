@@ -97,9 +97,7 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let bookMarkAction = UIContextualAction(style: .normal, title: "ブックマーク") { (action, view, completionHandler) in
-            // 処理を記述
-            print("ブックマークがタップされた")
-            // realmでtitle, url保存
+            
             completionHandler(true)
         }
         return UISwipeActionsConfiguration(actions: [bookMarkAction])
