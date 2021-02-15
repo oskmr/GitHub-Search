@@ -15,14 +15,14 @@ class GitHubWebViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if let url = URL(string: hoge.urlStr) {
-//            self.webView.load(URLRequest(url: url))
-//        }
+        if let url = URL(string: gitHubEntity?.urlStr ?? "https://github.co.jp/") {
+            self.webView.load(URLRequest(url: url))
+        }
 
     }
 
     func hoge(gitHubEntity: GithubEntity) {
-//        gitHubEntity = gitHubEntity
+        self.gitHubEntity = gitHubEntity
     }
 
 }

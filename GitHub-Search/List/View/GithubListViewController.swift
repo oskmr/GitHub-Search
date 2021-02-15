@@ -65,9 +65,4 @@ extension GithubListViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
-//        let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController")
-//        navigationController?.pushViewController(searchVC, animated: true)
-//    }
 }
