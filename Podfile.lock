@@ -6,16 +6,10 @@ PODS:
   - RxOptional (5.0.1):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
-<<<<<<< HEAD
-  - RxRelay (6.1.0):
-    - RxSwift (= 6.1.0)
-  - RxSwift (6.1.0)
-=======
   - RxRelay (6.0.0):
     - RxSwift (= 6.0.0)
   - RxSwift (6.0.0)
   - SwiftLint (0.42.0)
->>>>>>> 6817f7c742b1af10940e3b216f990ebec440585e
 
 DEPENDENCIES:
   - Alamofire
