@@ -23,6 +23,7 @@ GitHubAPIを使用したアプリ
 
 # Configuration
 UI implementation: Storyboard + XIB
+
 Architecture: MVVM + RxSwift
 
 # Author
