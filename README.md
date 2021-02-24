@@ -13,7 +13,7 @@ GitHubAPIを使用したアプリ
 
 ![Videotogif](https://user-images.githubusercontent.com/59869820/105650304-be251880-5ef6-11eb-8535-785b3320d0fe.gif)
 
-# 使った技術
+# Using Tools and Libraries
 - RxSwift
 - RxCocoa
 - RxOptional
@@ -21,8 +21,13 @@ GitHubAPIを使用したアプリ
 - SwiftLint
 - LicensePlist
 
-# アーキテクチャ
-MVVM
+# Configuration
+UI implementation: Storyboard + XIB
+Architecture: MVVM + RxSwift
 
 # Author
 miserii
+
+# Contribution
+- [New issue](https://github.com/miserii/GitHub-Search/issues)
+- [New pull request](https://github.com/miserii/GitHub-Search/pulls)
