@@ -19,6 +19,7 @@ GitHubAPIを使用したアプリ
 - RxOptional
 - Alamofire
 - SwiftLint
+- LicensePlist
 
 # アーキテクチャ
 MVVM
