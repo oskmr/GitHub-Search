@@ -42,6 +42,7 @@ final class GithubSearchViewController: UIViewController {
         let searchVC = storyboard.instantiateViewController(withIdentifier: "BookMarkViewController")
         navigationController?.pushViewController(searchVC, animated: true)
     }
+    
     private func bindInputStream() {
         // 0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
         let searchTextObservable = searchTextField.rx.text
@@ -96,10 +97,27 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let bookMarkAction = UIContextualAction(style: .normal, title: "ブックマーク") { (action, view, completionHandler) in
-            UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: self.output.models[safe: indexPath.item]!), forKey: "key")
+            self.saveModel(model: self.output.models[safe: indexPath.item]!)
             completionHandler(true)
         }
         return UISwipeActionsConfiguration(actions: [bookMarkAction])
+    }
+    
+    func saveModel(model: GithubEntity) {
+        do {
+            try UserDefaults.standard.set(object: model, forKey: "key")
+        } catch {
+            print(error)
+        }
+    }
+    
+    func getModel() ->GithubEntity? {
+        do {
+            return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
+        } catch {
+            print(error)
+            return nil
+        }
     }
 
 }

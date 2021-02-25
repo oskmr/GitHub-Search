@@ -5,11 +5,14 @@
 //  Created by 逢坂 美芹 on 2021/01/23.
 //
 
+import Foundation
+
 struct GithubResponse: Codable {
   let items: [GithubEntity]?
 }
 
 struct GithubEntity: Codable {
+    
   let id: Int
   let name: String
   private let fullName: String
