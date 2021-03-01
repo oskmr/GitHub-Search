@@ -108,7 +108,7 @@ opt_in_rules:
   - fallthrough
   - fatal_error_message
   #- file_header # このルールの意味を理解していないため
-  - file_name
+  #- file_name
   - first_where
   - force_unwrapping
   - function_default_parameter_at_end
