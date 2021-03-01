@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxOptional
 
 final class GithubSearchViewController: UIViewController {
 
@@ -42,12 +41,12 @@ final class GithubSearchViewController: UIViewController {
         let searchVC = storyboard.instantiateViewController(withIdentifier: "BookMarkViewController")
         navigationController?.pushViewController(searchVC, animated: true)
     }
-    
+
     private func bindInputStream() {
         // 0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
-        let searchTextObservable = searchTextField.rx.text
+        let searchTextObservable = searchTextField.rx.text.orEmpty
             .debounce(RxTimeInterval.milliseconds(200), scheduler: MainScheduler.instance)
-            .distinctUntilChanged().filterNil().filter { $0.isNotEmpty }
+            .distinctUntilChanged().filter { $0.isEmpty }
         // ここのfilterNil消す書き方にできる？
 
         let sortTypeObservable = Observable.merge(
@@ -89,20 +88,22 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // let githubModel = output.models[safe: indexPath.item]?
+
         let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
         let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? GitHubWebViewController
         searchVC?.hoge(gitHubEntity: output.models[safe: indexPath.item]!)
-        navigationController!.pushViewController(searchVC!, animated: true)
+        navigationController?.pushViewController(searchVC!, animated: true)
     }
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let bookMarkAction = UIContextualAction(style: .normal, title: "ブックマーク") { (action, view, completionHandler) in
+        let bookMarkAction = UIContextualAction(style: .normal, title: "ブックマーク") { action, view, completionHandler in
             self.saveModel(model: self.output.models[safe: indexPath.item]!)
             completionHandler(true)
         }
         return UISwipeActionsConfiguration(actions: [bookMarkAction])
     }
-    
+
     func saveModel(model: GithubEntity) {
         do {
             try UserDefaults.standard.set(object: model, forKey: "key")
@@ -110,8 +111,8 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
             print(error)
         }
     }
-    
-    func getModel() ->GithubEntity? {
+
+    func getModel() -> GithubEntity? {
         do {
             return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
         } catch {

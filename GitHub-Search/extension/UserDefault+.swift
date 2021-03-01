@@ -1,10 +1,3 @@
-//
-//  UserDefault+.swift
-//  GitHub-Search
-//
-//  Created by 千葉大志 on 2021/02/25.
-//
-
 import Foundation
 
 extension UserDefaults {
