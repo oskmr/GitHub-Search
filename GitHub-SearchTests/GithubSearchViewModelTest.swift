@@ -12,6 +12,7 @@ final class GithubSearchViewModelTest: XCTestCase {
     // changeModelsObservable時にデータ取得の完了通知が正常に流れていることをテストする
     // searchTextObserver時にデータの変化取得の完了通知が正常に流れていることをテストする
     // sortTypeObserver時にデータの変化取得の完了通知が正常に流れていることをテストする
+    // onNextに当たるのがcombineLatest, flatmapLatest, map?
 
     func test_changeModelsObservable() {
         let dependency = Dependency()

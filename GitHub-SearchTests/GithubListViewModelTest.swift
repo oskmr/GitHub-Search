@@ -7,6 +7,7 @@
 
 @testable import GitHub_Search
 import XCTest
+import RxSwift
 
 final class GithubListViewModelTest: XCTestCase {
     // changeModelsObservable時にデータ取得の完了通知が正常に流れていることをテストする？
@@ -14,9 +15,10 @@ final class GithubListViewModelTest: XCTestCase {
     func test_changeModelsObservable() {
         let dependency = Dependency()
         let viewModel = dependency.testTarget
-        let changeModelsObservable = viewModel.changeModelsObservable.map { true }
-
+        let mock = Mock.listViewModelMock()
+        // let changeModelsObservable = viewModel.changeModelsObservable.map { true }
         // viewModel.changeModelsObservable.onNext(())
+
 
         // XCTAssertEqual(changeModelsObservable.value, true, "changeModelsObservable時にデータ取得の完了通知が正常に流れている")
     }
