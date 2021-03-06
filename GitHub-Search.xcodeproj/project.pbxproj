@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,10 @@
 		C519B5BA25D2F98D00C7D7B0 /* BookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C519B5B825D2F98D00C7D7B0 /* BookMarkTableViewCell.swift */; };
 		C519B5BB25D2F98D00C7D7B0 /* BookMarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C519B5B925D2F98D00C7D7B0 /* BookMarkTableViewCell.xib */; };
 		C59133C225E679D900D2DD0F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59133C125E679D900D2DD0F /* Settings.bundle */; };
+		C5E5BAD425F400CD002DB779 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C5E5BAD325F400CD002DB779 /* RxSwift */; };
+		C5E5BAD625F400CD002DB779 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C5E5BAD525F400CD002DB779 /* RxCocoa */; };
+		C5E5BAD825F400CD002DB779 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C5E5BAD725F400CD002DB779 /* RxRelay */; };
+		C5E5BADE25F400E9002DB779 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C5E5BADD25F400E9002DB779 /* Alamofire */; };
 		E8C00C9925BC670600FC6A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00C9825BC670600FC6A2A /* AppDelegate.swift */; };
 		E8C00C9B25BC670600FC6A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00C9A25BC670600FC6A2A /* SceneDelegate.swift */; };
 		E8C00CA025BC670600FC6A2A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C00C9E25BC670600FC6A2A /* Search.storyboard */; };
@@ -106,6 +110,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E5BADE25F400E9002DB779 /* Alamofire in Frameworks */,
+				C5E5BAD625F400CD002DB779 /* RxCocoa in Frameworks */,
+				C5E5BAD425F400CD002DB779 /* RxSwift in Frameworks */,
+				C5E5BAD825F400CD002DB779 /* RxRelay in Frameworks */,
 				40BC53BE2121995CA3B09F88 /* Pods_GitHub_Search.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,7 +380,6 @@
 				E8C00C9125BC670600FC6A2A /* Sources */,
 				E8C00C9225BC670600FC6A2A /* Frameworks */,
 				E8C00C9325BC670600FC6A2A /* Resources */,
-				C421670B84B1A650D9EDCC20 /* [CP] Embed Pods Frameworks */,
 				C519B65125D7E5E300C7D7B0 /* ShellScript */,
 				C59133B525E6789500D2DD0F /* LicensePlist */,
 			);
@@ -381,6 +388,12 @@
 			dependencies = (
 			);
 			name = "GitHub-Search";
+			packageProductDependencies = (
+				C5E5BAD325F400CD002DB779 /* RxSwift */,
+				C5E5BAD525F400CD002DB779 /* RxCocoa */,
+				C5E5BAD725F400CD002DB779 /* RxRelay */,
+				C5E5BADD25F400E9002DB779 /* Alamofire */,
+			);
 			productName = "GitHub-Search";
 			productReference = E8C00C9525BC670600FC6A2A /* GitHub-Search.app */;
 			productType = "com.apple.product-type.application";
@@ -412,7 +425,6 @@
 				E8C00CB225BC670800FC6A2A /* Sources */,
 				E8C00CB325BC670800FC6A2A /* Frameworks */,
 				E8C00CB425BC670800FC6A2A /* Resources */,
-				73B6C5546BFD69B0358CD5FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -455,6 +467,10 @@
 				Base,
 			);
 			mainGroup = E8C00C8C25BC670600FC6A2A;
+			packageReferences = (
+				C5E5BAD225F400CD002DB779 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				C5E5BADC25F400E9002DB779 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = E8C00C9625BC670600FC6A2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -521,40 +537,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		73B6C5546BFD69B0358CD5FB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search-GitHub-SearchUITests/Pods-GitHub-Search-GitHub-SearchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search-GitHub-SearchUITests/Pods-GitHub-Search-GitHub-SearchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search-GitHub-SearchUITests/Pods-GitHub-Search-GitHub-SearchUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C421670B84B1A650D9EDCC20 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C519B65125D7E5E300C7D7B0 /* ShellScript */ = {
@@ -996,6 +978,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C5E5BAD225F400CD002DB779 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = exactVersion;
+				version = 6.1.0;
+			};
+		};
+		C5E5BADC25F400E9002DB779 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C5E5BAD325F400CD002DB779 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E5BAD225F400CD002DB779 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		C5E5BAD525F400CD002DB779 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E5BAD225F400CD002DB779 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C5E5BAD725F400CD002DB779 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E5BAD225F400CD002DB779 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		C5E5BADD25F400E9002DB779 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E5BADC25F400E9002DB779 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E8C00C8D25BC670600FC6A2A /* Project object */;
 }
