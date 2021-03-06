@@ -7,10 +7,6 @@ target 'GitHub-Search' do
 
   # Pods for GitHub-Search
 
-  pod 'Alamofire'
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'RxOptional'
   pod 'SwiftLint'
   pod 'LicensePlist'
 
