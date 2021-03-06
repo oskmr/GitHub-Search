@@ -47,7 +47,6 @@ final class GithubSearchViewController: UIViewController {
         let searchTextObservable = searchTextField.rx.text.orEmpty
             .debounce(RxTimeInterval.milliseconds(200), scheduler: MainScheduler.instance)
             .distinctUntilChanged().filter { $0.isEmpty }
-        // ここのfilterNil消す書き方にできる？
 
         let sortTypeObservable = Observable.merge(
             Observable.just(sortTypeSegmentedControl.selectedSegmentIndex),
