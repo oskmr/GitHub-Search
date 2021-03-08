@@ -7,12 +7,12 @@ target 'GitHub-Search' do
 
   # Pods for GitHub-Search
 
-  pod 'Alamofire'
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'RxOptional'
   pod 'SwiftLint'
   pod 'LicensePlist'
+  pod 'RxCocoa'
+  pod 'RxOptional'
+  pod 'RxSwift'
+
 
   target 'GitHub-SearchTests' do
     inherit! :search_paths
