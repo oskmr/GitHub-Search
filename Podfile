@@ -12,6 +12,7 @@ target 'GitHub-Search' do
   pod 'RxCocoa'
   pod 'RxOptional'
   pod 'RxSwift'
+  pod 'Alamofire'
 
 
   target 'GitHub-SearchTests' do
