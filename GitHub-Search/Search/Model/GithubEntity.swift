@@ -12,7 +12,7 @@ struct GithubResponse: Codable {
 }
 
 struct GithubEntity: Codable {
-    
+
   let id: Int
   let name: String
   private let fullName: String
