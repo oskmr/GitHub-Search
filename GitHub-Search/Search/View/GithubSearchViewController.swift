@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxOptional
 
 final class GithubSearchViewController: UIViewController {
 
@@ -46,9 +45,9 @@ final class GithubSearchViewController: UIViewController {
 
     private func bindInputStream() {
         // 0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
-        let searchTextObservable = searchTextField.rx.text
+        let searchTextObservable = searchTextField.rx.text.orEmpty
             .debounce(RxTimeInterval.milliseconds(200), scheduler: MainScheduler.instance)
-            .distinctUntilChanged().filterNil().filter { $0.isNotEmpty }
+            .distinctUntilChanged().filter { $0.isEmpty }
         // ここのfilterNil消す書き方にできる？
 
         let sortTypeObservable = Observable.merge(
@@ -90,6 +89,8 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // let githubModel = output.models[safe: indexPath.item]?
+
         let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
         let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? GitHubWebViewController
         searchVC?.hoge(gitHubEntity: output.models[safe: indexPath.item]!)
@@ -109,6 +110,15 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
             try UserDefaults.standard.set(object: model, forKey: "key")
         } catch {
             print(error)
+        }
+    }
+
+    func getModel() -> GithubEntity? {
+        do {
+            return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
+        } catch {
+            print(error)
+            return nil
         }
     }
 

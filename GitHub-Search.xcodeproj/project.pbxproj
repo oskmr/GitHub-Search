@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		C519B5B325D2F78E00C7D7B0 /* BookMark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C519B5B225D2F78E00C7D7B0 /* BookMark.storyboard */; };
 		C519B5BA25D2F98D00C7D7B0 /* BookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C519B5B825D2F98D00C7D7B0 /* BookMarkTableViewCell.swift */; };
 		C519B5BB25D2F98D00C7D7B0 /* BookMarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C519B5B925D2F98D00C7D7B0 /* BookMarkTableViewCell.xib */; };
+		C59133C225E679D900D2DD0F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59133C125E679D900D2DD0F /* Settings.bundle */; };
 		E8C00C9925BC670600FC6A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00C9825BC670600FC6A2A /* AppDelegate.swift */; };
 		E8C00C9B25BC670600FC6A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00C9A25BC670600FC6A2A /* SceneDelegate.swift */; };
 		E8C00CA025BC670600FC6A2A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C00C9E25BC670600FC6A2A /* Search.storyboard */; };
@@ -72,6 +73,7 @@
 		C519B5B225D2F78E00C7D7B0 /* BookMark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookMark.storyboard; sourceTree = "<group>"; };
 		C519B5B825D2F98D00C7D7B0 /* BookMarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewCell.swift; sourceTree = "<group>"; };
 		C519B5B925D2F98D00C7D7B0 /* BookMarkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookMarkTableViewCell.xib; sourceTree = "<group>"; };
+		C59133C125E679D900D2DD0F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = "GitHub-Search/Settings.bundle"; sourceTree = "<group>"; };
 		E8C00C9525BC670600FC6A2A /* GitHub-Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C00C9825BC670600FC6A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8C00C9A25BC670600FC6A2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		E8C00C8C25BC670600FC6A2A = {
 			isa = PBXGroup;
 			children = (
+				C59133C125E679D900D2DD0F /* Settings.bundle */,
 				E8C00C9725BC670600FC6A2A /* GitHub-Search */,
 				E8C00CAE25BC670800FC6A2A /* GitHub-SearchTests */,
 				E8C00CB925BC670800FC6A2A /* GitHub-SearchUITests */,
@@ -369,8 +372,9 @@
 				E8C00C9125BC670600FC6A2A /* Sources */,
 				E8C00C9225BC670600FC6A2A /* Frameworks */,
 				E8C00C9325BC670600FC6A2A /* Resources */,
-				C421670B84B1A650D9EDCC20 /* [CP] Embed Pods Frameworks */,
 				C519B65125D7E5E300C7D7B0 /* ShellScript */,
+				C59133B525E6789500D2DD0F /* LicensePlist */,
+				FF08819EF10606B4F9EE4E97 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,7 +412,7 @@
 				E8C00CB225BC670800FC6A2A /* Sources */,
 				E8C00CB325BC670800FC6A2A /* Frameworks */,
 				E8C00CB425BC670800FC6A2A /* Resources */,
-				73B6C5546BFD69B0358CD5FB /* [CP] Embed Pods Frameworks */,
+				CE454AFA6C1B723672113578 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -475,6 +479,7 @@
 				E8C00CA525BC670800FC6A2A /* LaunchScreen.storyboard in Resources */,
 				E8C00CA225BC670800FC6A2A /* Assets.xcassets in Resources */,
 				E8C00CE125BC689B00FC6A2A /* GithubTableViewCell.xib in Resources */,
+				C59133C225E679D900D2DD0F /* Settings.bundle in Resources */,
 				E8C00CA025BC670600FC6A2A /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,40 +523,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		73B6C5546BFD69B0358CD5FB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search-GitHub-SearchUITests/Pods-GitHub-Search-GitHub-SearchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search-GitHub-SearchUITests/Pods-GitHub-Search-GitHub-SearchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search-GitHub-SearchUITests/Pods-GitHub-Search-GitHub-SearchUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C421670B84B1A650D9EDCC20 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C519B65125D7E5E300C7D7B0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -568,6 +539,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n  \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		C59133B525E6789500D2DD0F /* LicensePlist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = LicensePlist;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\nfi\n";
 		};
 		C5AC9289F6F7B5DE1E392218 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -591,6 +580,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CE454AFA6C1B723672113578 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search-GitHub-SearchUITests/Pods-GitHub-Search-GitHub-SearchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search-GitHub-SearchUITests/Pods-GitHub-Search-GitHub-SearchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search-GitHub-SearchUITests/Pods-GitHub-Search-GitHub-SearchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F6A9E455C8E619627D58912B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -611,6 +617,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF08819EF10606B4F9EE4E97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub-Search/Pods-GitHub-Search-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

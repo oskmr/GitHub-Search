@@ -1,0 +1,69 @@
+name: Alamofire, nameSpecified: 
+body: Copyright (c) 2014-2…
+version: 5.4.1
+
+name: Alamofire, nameSpecified: 
+body: Copyright (c) 2014-2…
+version: 5.4.1
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 3.0.5
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 3.0.5
+
+name: RxCocoa, nameSpecified: 
+body: **The MIT License**
+…
+version: 6.1.0
+
+name: RxCocoa, nameSpecified: 
+body: **The MIT License**
+…
+version: 6.1.0
+
+name: RxOptional, nameSpecified: 
+body: Copyright (c) 2016 T…
+version: 5.0.1
+
+name: RxOptional, nameSpecified: 
+body: Copyright (c) 2016 T…
+version: 5.0.1
+
+name: RxRelay, nameSpecified: 
+body: **The MIT License**
+…
+version: 6.1.0
+
+name: RxRelay, nameSpecified: 
+body: **The MIT License**
+…
+version: 6.1.0
+
+name: RxSwift, nameSpecified: 
+body: **The MIT License**
+…
+version: 6.1.0
+
+name: RxSwift, nameSpecified: 
+body: **The MIT License**
+…
+version: 6.1.0
+
+name: SwiftLint, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.43.0
+
+name: SwiftLint, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.43.0
+
+add-version-numbers: false
+
+LicensePlist Version: 3.0.5

@@ -14,6 +14,7 @@ class BookMarkViewController: UIViewController {
             let cell = UINib(nibName: "BookMarkTableViewCell", bundle: nil)
             tableView.register(cell, forCellReuseIdentifier: "Cell")
             tableView.dataSource = self
+            tableView.delegate = self
         }
     }
 
@@ -24,7 +25,7 @@ class BookMarkViewController: UIViewController {
 
 }
 
-extension BookMarkViewController: UITableViewDataSource {
+extension BookMarkViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -33,6 +34,7 @@ extension BookMarkViewController: UITableViewDataSource {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? BookMarkTableViewCell
         else { return UITableViewCell() }
+        cell.prepareUI()
 
         return cell
     }
