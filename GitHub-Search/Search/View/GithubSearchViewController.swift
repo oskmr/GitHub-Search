@@ -30,6 +30,7 @@ final class GithubSearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         bindInputStream()
         bindOutputStream()
         bookMarkBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(bookMarkButtonTapped(_:)))
@@ -93,7 +94,7 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
         let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
         let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? GitHubWebViewController
         searchVC?.hoge(gitHubEntity: output.models[safe: indexPath.item]!)
-        navigationController?.pushViewController(searchVC!, animated: true)
+        navigationController?.pushViewController(searchVC ?? GithubSearchViewController(), animated: true)
     }
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
