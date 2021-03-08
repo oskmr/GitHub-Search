@@ -10,7 +10,7 @@ PODS:
   - RxRelay (6.1.0):
     - RxSwift (= 6.1.0)
   - RxSwift (6.1.0)
-  - SwiftLint (0.42.0)
+  - SwiftLint (0.43.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -37,7 +37,7 @@ SPEC CHECKSUMS:
   RxOptional: e0b39f0863c25c4bfeea83cb35102a5244d048b3
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
-  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  SwiftLint: 0c645fdc6feed3e390c1701ab3cc669f88b42752
 
 PODFILE CHECKSUM: 36292f38b9932f024ca27f618c46484e03db83f3
 
