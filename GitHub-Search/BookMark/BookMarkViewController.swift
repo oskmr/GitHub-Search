@@ -39,4 +39,13 @@ extension BookMarkViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
+    func getModel() -> GithubEntity? {
+        do {
+            return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+
 }

@@ -14,4 +14,21 @@ extension UserDefaults {
         return try JSONDecoder().decode(objectType, from: result)
     }
 
+    func saveModel(model: GithubEntity) {
+        do {
+            try UserDefaults.standard.set(object: model, forKey: "key")
+        } catch {
+            print(error)
+        }
+    }
+
+    func getModel() -> GithubEntity? {
+        do {
+            return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+
 }

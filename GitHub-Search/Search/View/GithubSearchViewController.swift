@@ -111,13 +111,4 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
         }
     }
 
-    func getModel() -> GithubEntity? {
-        do {
-            return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
-        } catch {
-            print(error)
-            return nil
-        }
-    }
-
 }
