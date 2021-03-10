@@ -26,15 +26,25 @@ class BookMarkViewController: UIViewController {
 
 extension BookMarkViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return getModel()?.name.count ?? 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? BookMarkTableViewCell
         else { return UITableViewCell() }
+        cell.prepareUI()
 
         return cell
+    }
+
+    func getModel() -> GithubEntity? {
+        do {
+            return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
+        } catch {
+            print(error)
+            return nil
+        }
     }
 
 }
