@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxOptional
 
 final class GithubSearchViewController: UIViewController {
 
@@ -45,9 +46,9 @@ final class GithubSearchViewController: UIViewController {
 
     private func bindInputStream() {
         // 0.2以上,変化している,nilじゃない,文字数0以上だったらテキストを流す
-        let searchTextObservable = searchTextField.rx.text.orEmpty
+        let searchTextObservable = searchTextField.rx.text
             .debounce(RxTimeInterval.milliseconds(200), scheduler: MainScheduler.instance)
-            .distinctUntilChanged().filter { $0.isEmpty }
+            .distinctUntilChanged().filterNil().filter { $0.isNotEmpty }
         // ここのfilterNil消す書き方にできる？
 
         let sortTypeObservable = Observable.merge(
