@@ -19,6 +19,7 @@ class BookMarkTableViewCell: UITableViewCell {
             print(error)
             return nil
         }
+
     }
 
     func prepareUI() {
