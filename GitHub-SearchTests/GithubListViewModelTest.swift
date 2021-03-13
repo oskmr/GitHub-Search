@@ -9,17 +9,21 @@
 import XCTest
 
 class GithubListViewModelTest: XCTestCase {
-    func testBannerSetting() {
+
+    func test() {
         let dependency = Dependency()
         let viewModel = dependency.testTarget
     }
+
 }
 
 private extension GithubListViewModelTest {
+
     struct Dependency {
         let testTarget: GithubListViewModel
         init() {
             self.testTarget = .init()
         }
     }
+
 }
