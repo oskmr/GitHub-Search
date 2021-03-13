@@ -108,10 +108,12 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
 
     func saveModel(model: GithubEntity) {
         do {
-            try UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: model), forKey: "key")
+            try UserDefaults.standard.set(object: model, forKey: "key")
         } catch {
             print(error)
         }
+
+        // UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: model), forKey: "key")
     }
 
     func getModel() -> GithubEntity? {
@@ -121,6 +123,8 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
             print(error)
             return nil
         }
+
+        // UserDefaults.standard.get(NSKeyedUnarchiver.unarchiveObject(objectType: GithubEntity.self), forKey: "key")
     }
 
 }
