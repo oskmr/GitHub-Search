@@ -19,7 +19,6 @@ GitHubAPIを使用したアプリ
 - RxOptional
 - Alamofire
 - SwiftLint
-- LicensePlist
 
 # Configuration
 UI implementation: Storyboard + XIB
