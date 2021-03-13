@@ -108,7 +108,7 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
 
     func saveModel(model: GithubEntity) {
         do {
-            try UserDefaults.standard.set(object: model, forKey: "key")
+            try UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: model), forKey: "key")
         } catch {
             print(error)
         }
