@@ -1,6 +1,7 @@
 import Foundation
 
 extension UserDefaults {
+
     func set<T: Codable>(object: T, forKey: String) throws {
         let jsonData = try JSONEncoder().encode(object)
         set(jsonData, forKey: forKey)

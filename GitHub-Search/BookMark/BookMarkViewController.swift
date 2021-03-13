@@ -26,6 +26,7 @@ class BookMarkViewController: UIViewController {
 }
 
 extension BookMarkViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return getModel()?.name.count ?? 1
     }
