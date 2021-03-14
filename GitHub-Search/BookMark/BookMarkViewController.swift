@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookMarkViewController: UIViewController {
+final class BookMarkViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
