@@ -12,19 +12,9 @@ class BookMarkTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var url: UILabel!
 
-    func getModel() -> GithubEntity? {
-        do {
-            return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
-        } catch {
-            print(error)
-            return nil
-        }
-
-    }
-
-    func prepareUI() {
-        title.text = getModel()?.name
-        url.text = getModel()?.urlStr
+    func setAttributes(title: String, url: String) {
+        self.title.text = title
+        self.url.text = url
     }
 
 }

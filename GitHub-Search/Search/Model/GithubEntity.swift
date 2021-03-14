@@ -8,7 +8,7 @@
 import Foundation
 
 struct GithubResponse: Codable {
-  let items: [GithubEntity]?
+  var items: [GithubEntity]?
 }
 
 struct GithubEntity: Codable {

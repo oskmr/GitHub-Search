@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 
 class GitHubWebViewController: UIViewController, WKNavigationDelegate {
+
     private var gitHubEntity: GithubEntity?
     @IBOutlet weak var webView: WKWebView!
 
@@ -18,7 +19,6 @@ class GitHubWebViewController: UIViewController, WKNavigationDelegate {
         if let url = URL(string: gitHubEntity?.urlStr ?? "https://github.co.jp/") {
             self.webView.load(URLRequest(url: url))
         }
-
     }
 
     func hoge(gitHubEntity: GithubEntity) {
