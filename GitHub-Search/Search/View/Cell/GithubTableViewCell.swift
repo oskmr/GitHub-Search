@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GithubTableViewCell: UITableViewCell {
+final class GithubTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var urlLabel: UILabel!
 

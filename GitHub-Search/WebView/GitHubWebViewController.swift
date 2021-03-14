@@ -8,10 +8,10 @@
 import UIKit
 import WebKit
 
-class GitHubWebViewController: UIViewController, WKNavigationDelegate {
+final class GitHubWebViewController: UIViewController, WKNavigationDelegate {
 
     private var gitHubEntity: GithubEntity?
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet private weak var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,10 +7,10 @@
 
 import UIKit
 
-class BookMarkTableViewCell: UITableViewCell {
+final class BookMarkTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var url: UILabel!
+    @IBOutlet private weak var title: UILabel!
+    @IBOutlet private weak var url: UILabel!
 
     func setAttributes(title: String, url: String) {
         self.title.text = title
