@@ -28,21 +28,23 @@ class BookMarkViewController: UIViewController {
 extension BookMarkViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return getModel()?.name.count ?? 1
+        return getBookMarks()?.items?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? BookMarkTableViewCell
         else { return UITableViewCell() }
-        cell.prepareUI()
 
+        if let bookMark = getBookMarks()?.items?[indexPath.row] {
+            cell.setAttributes(title: bookMark.name, url: bookMark.urlStr)
+        }
         return cell
     }
 
-    func getModel() -> GithubEntity? {
+    func getBookMarks() -> GithubResponse? {
         do {
-            return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
+            return try UserDefaults.standard.get(objectType: GithubResponse.self, forKey: "bookMarks")
         } catch {
             print(error)
             return nil

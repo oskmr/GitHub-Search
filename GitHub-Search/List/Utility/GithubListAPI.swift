@@ -34,7 +34,7 @@ static func get(success: (([GithubListEntity]) -> Void)? = nil, error: ((Error) 
 
 extension GithubListAPI: ReactiveCompatible {}
 extension Reactive where Base: GithubListAPI {
-    
+
     static func get(completion: ([GithubListEntity]) -> Void) -> Observable<[GithubListEntity]> {
         return Observable.create { observer in
             GithubListAPI.get(success: { models in
