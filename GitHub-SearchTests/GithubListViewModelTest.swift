@@ -16,10 +16,7 @@ class GithubListViewModelTest: XCTestCase {
         let dependency = Dependency()
         let viewModel = dependency.testTarget
 
-        let repository = GithubListEntity(id: 1,
-                                            name: "testName",
-                                            fullName: "testFullName",
-                                            htmlURL: "testHtmlUrl")
+        let repository = GithubListEntity(id: 1, name: "testName", fullName: "testFullName", htmlURL: "testHtmlUrl")
         let disposeBag = DisposeBag()
 
         let searchResults = BehaviorRelay<[GithubListEntity]>(value: [])
