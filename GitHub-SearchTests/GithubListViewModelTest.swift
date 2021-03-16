@@ -22,15 +22,10 @@ class GithubListViewModelTest: XCTestCase {
                                             htmlURL: "testHtmlUrl")
         let disposeBag = DisposeBag()
 
-        // let searchResults =
-        // let searchTextResult =
-
-        let searchText = "test"
-        guard let searchTextResultValue = searchTextResult.value else {
-            XCTFail(" searchTextResult.value is nil")
-            return
-        }
-        XCTAssertEqual(searchTextResultValue, searchText)
+        let searchResults = BehaviorRelay<[GithubListEntity]>(value: [])
+        dependency.testTarget.changeModelsObservable
+            .bind(to: searchResults)
+            .disposed(by: disposeBag)
 
         guard let repositoryResult = searchResults.value.first else {
             XCTFail("searchResults.value.first is nil")
