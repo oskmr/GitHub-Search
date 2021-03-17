@@ -90,8 +90,6 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // let githubModel = output.models[safe: indexPath.item]?
-
         let storyboard = UIStoryboard(name: "WebViewController", bundle: nil)
         let searchVC = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? GitHubWebViewController
         searchVC?.hoge(gitHubEntity: output.models[safe: indexPath.item]!)
@@ -108,18 +106,22 @@ extension GithubSearchViewController: UITableViewDataSource, UITableViewDelegate
 
     func saveModel(model: GithubEntity) {
         do {
-            try UserDefaults.standard.set(object: model, forKey: "key")
+            // 保存するデータの型を一旦、GithubResponseにする。GithubEntityの配列を持っているCodable objectなので。
+            // 一旦保存したGithubResponseを取り出す
+            var savedBookMarks = try UserDefaults.standard.get(objectType: GithubResponse.self, forKey: "bookMarks")
+            if savedBookMarks != nil {
+                // 取り出したGithubResponseのitemsに新たに保存したいGithubEntityをappendする
+                savedBookMarks?.items?.append(model)
+                // GithubResponseを保存する
+                try UserDefaults.standard.set(object: savedBookMarks, forKey: "bookMarks")
+            } else {
+                // もし何も保存してなかったら、作成
+                let gitHubResponse = GithubResponse(items: [model])
+                // GithubResponseを保存する
+                try UserDefaults.standard.set(object: gitHubResponse, forKey: "bookMarks")
+            }
         } catch {
             print(error)
-        }
-    }
-
-    func getModel() -> GithubEntity? {
-        do {
-            return try UserDefaults.standard.get(objectType: GithubEntity.self, forKey: "key")
-        } catch {
-            print(error)
-            return nil
         }
     }
 

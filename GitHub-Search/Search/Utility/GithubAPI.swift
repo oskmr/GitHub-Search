@@ -36,11 +36,13 @@ final class GithubAPI {
       }
     }
   }
+
 }
 
 extension GithubAPI: ReactiveCompatible {}
 
 extension Reactive where Base: GithubAPI {
+
   static func get(searchWord: String, isDesc: Bool = true) -> Observable<[GithubEntity]> {
     return Observable.create { observer in
       GithubAPI.get(searchWord: searchWord, success: { models in
