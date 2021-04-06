@@ -19,13 +19,8 @@ class GithubSearchViewModelTest: XCTestCase {
         let repository = GithubEntity(id: 1, name: "", fullName: "")
         let disposeBag = DisposeBag()
 
-        let searchResults = BehaviorRelay<[GithubEntity]>(value: [])
-        dependency.testTarget
-            .bind(to: searchResults)
-            .disposed(by: disposeBag)
-
         let searchTextResult = BehaviorRelay<String?>(value: nil)
-        dependency.testTarget
+        viewModel.searchText
             .bind(to: searchTextResult)
             .disposed(by: disposeBag)
 
@@ -38,7 +33,7 @@ class GithubSearchViewModelTest: XCTestCase {
 
         XCTAssertEqual(searchTextResultValue, searchText)
 
-        guard let repositoryResult = searchResults.value.first else {
+        guard let repositoryResult = viewModel.models.first else {
             XCTFail("searchResults.value.first is nil")
             return
         }
@@ -61,4 +56,3 @@ private extension GithubSearchViewModelTest {
     }
 
 }
-

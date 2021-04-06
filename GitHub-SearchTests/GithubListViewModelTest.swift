@@ -17,14 +17,14 @@ class GithubListViewModelTest: XCTestCase {
         let viewModel = dependency.testTarget
 
         let repository = GithubListEntity(id: 1, name: "testName", fullName: "testFullName", htmlURL: "testHtmlUrl")
-        let disposeBag = DisposeBag()
+        // let disposeBag = DisposeBag()
 
-        let searchResults = BehaviorRelay<[GithubListEntity]>(value: [])
-        dependency.testTarget.changeModelsObservable
-            .bind(to: searchResults)
-            .disposed(by: disposeBag)
+        // let searchResults = BehaviorRelay<[GithubListEntity]>(value: [])
+        // dependency.testTarget.changeModelsObservable
+            // .bind(to: searchResults)
+            // .disposed(by: disposeBag)
 
-        guard let repositoryResult = searchResults.value.first else {
+        guard let repositoryResult = viewModel.models.first else {
             XCTFail("searchResults.value.first is nil")
             return
         }
