@@ -20,6 +20,8 @@
 		C59133C225E679D900D2DD0F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59133C125E679D900D2DD0F /* Settings.bundle */; };
 		C5E5BDA225FD2606002DB779 /* GithubListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E5BDA125FD2606002DB779 /* GithubListViewModelTest.swift */; };
 		C5FF1D45261C90420047F575 /* GitHubSearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FF1D44261C90420047F575 /* GitHubSearchViewModelTest.swift */; };
+		C5FF1D74261CD5E20047F575 /* GitHub-SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FF1D73261CD5E20047F575 /* GitHub-SearchUITests.swift */; };
+		C5FF1D79261CD5F80047F575 /* GitHub-SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FF1D78261CD5F80047F575 /* GitHub-SearchTests.swift */; };
 		E8C00C9925BC670600FC6A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00C9825BC670600FC6A2A /* AppDelegate.swift */; };
 		E8C00C9B25BC670600FC6A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C00C9A25BC670600FC6A2A /* SceneDelegate.swift */; };
 		E8C00CA025BC670600FC6A2A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C00C9E25BC670600FC6A2A /* Search.storyboard */; };
@@ -78,6 +80,8 @@
 		C59133C125E679D900D2DD0F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = "GitHub-Search/Settings.bundle"; sourceTree = "<group>"; };
 		C5E5BDA125FD2606002DB779 /* GithubListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubListViewModelTest.swift; sourceTree = "<group>"; };
 		C5FF1D44261C90420047F575 /* GitHubSearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchViewModelTest.swift; sourceTree = "<group>"; };
+		C5FF1D73261CD5E20047F575 /* GitHub-SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GitHub-SearchUITests.swift"; sourceTree = "<group>"; };
+		C5FF1D78261CD5F80047F575 /* GitHub-SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GitHub-SearchTests.swift"; sourceTree = "<group>"; };
 		E8C00C9525BC670600FC6A2A /* GitHub-Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C00C9825BC670600FC6A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8C00C9A25BC670600FC6A2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				E8C00CB125BC670800FC6A2A /* Info.plist */,
 				C5E5BDA125FD2606002DB779 /* GithubListViewModelTest.swift */,
 				C5FF1D44261C90420047F575 /* GitHubSearchViewModelTest.swift */,
+				C5FF1D78261CD5F80047F575 /* GitHub-SearchTests.swift */,
 			);
 			path = "GitHub-SearchTests";
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				E8C00CBC25BC670800FC6A2A /* Info.plist */,
+				C5FF1D73261CD5E20047F575 /* GitHub-SearchUITests.swift */,
 			);
 			path = "GitHub-SearchUITests";
 			sourceTree = "<group>";
@@ -449,6 +455,7 @@
 					};
 					E8C00CB525BC670800FC6A2A = {
 						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1230;
 						TestTargetID = E8C00C9425BC670600FC6A2A;
 					};
 				};
@@ -675,6 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5E5BDA225FD2606002DB779 /* GithubListViewModelTest.swift in Sources */,
+				C5FF1D79261CD5F80047F575 /* GitHub-SearchTests.swift in Sources */,
 				C5FF1D45261C90420047F575 /* GitHubSearchViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,6 +691,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5FF1D74261CD5E20047F575 /* GitHub-SearchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,6 +940,7 @@
 			baseConfigurationReference = 072F5F3A65C728CAF6675525 /* Pods-GitHub-Search-GitHub-SearchUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "GitHub-SearchUITests/Info.plist";
@@ -941,6 +951,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miseri.GitHub-SearchUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "GitHub-Search";
@@ -952,6 +963,7 @@
 			baseConfigurationReference = 07958904F0D6EAD7C35726F1 /* Pods-GitHub-Search-GitHub-SearchUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "GitHub-SearchUITests/Info.plist";
