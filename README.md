@@ -29,7 +29,7 @@ UI implementation: Storyboard + XIB
 Architecture: MVVM + RxSwift
 
 # Author
-miserii
+@oskmr
 
 # Contribution
 - [New issue](https://github.com/miserii/GitHub-Search/issues)
