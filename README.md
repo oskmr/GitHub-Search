@@ -8,7 +8,7 @@ GitHubAPIを使用したアプリ
 - 検索結果のスター順、作成日順での並び替え
 - WebViewで各リポジトリに遷移
 - Cellを右スワイプしてブックマーク
-- [WIP]ViewModelのテスト
+- ViewModelのテスト
 を実装
 
 ![Videotogif](https://user-images.githubusercontent.com/59869820/105650304-be251880-5ef6-11eb-8535-785b3320d0fe.gif)
