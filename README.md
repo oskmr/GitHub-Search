@@ -30,9 +30,3 @@ Architecture: MVVM + RxSwift
 
 # Author
 @oskmr
-
-# Contribution
-- [New issue](https://github.com/miserii/GitHub-Search/issues)
-- [New pull request](https://github.com/miserii/GitHub-Search/pulls)
-
-**Your contributions are welcome!:tada:**
