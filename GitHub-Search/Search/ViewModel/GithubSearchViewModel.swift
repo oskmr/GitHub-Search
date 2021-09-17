@@ -21,16 +21,20 @@ protocol GithubSearchViewModelOutput {
 final class GithubSearchViewModel: GithubSearchViewModelInput, GithubSearchViewModelOutput {
 
     let disposeBag = DisposeBag()
-    private let _searchText = PublishRelay<String>()
+
+    // ここvarじゃなくしたい
+    var searchText = PublishRelay<String>()
     lazy var searchTextObserver: AnyObserver<String> = .init(eventHandler: { event in
         guard let e = event.element else { return }
-        self._searchText.accept(e)
+        self.searchText.accept(e)
     })
+
     private let _sortType = PublishRelay<Bool>()
     lazy var sortTypeObserver: AnyObserver<Bool> = .init(eventHandler: { event in
         guard let e = event.element else { return }
         self._sortType.accept(e)
     })
+
     private let _changeModelsObservable = PublishRelay<Void>()
     lazy var changeModelsObservable = _changeModelsObservable.asObservable()
     private(set) var models: [GithubEntity] = []
@@ -38,7 +42,7 @@ final class GithubSearchViewModel: GithubSearchViewModelInput, GithubSearchViewM
     init() {
         Observable
             .combineLatest(
-                _searchText,
+                searchText,
                 _sortType
             )
             .flatMapLatest({ searchWord, sortType -> Observable<[GithubEntity]> in
